@@ -1,0 +1,15 @@
+<header>
+  <nav class="py-6">
+    <ul class="flex justify-center gap-4">
+      <li class="nav-item " *ngFor="let navitem of navlist">
+        <a
+
+          [routerLink]="navitem.path"
+          routerLinkActive="active"
+          class="text-white font-semibold"
+          >{{ navitem.nav_name }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
