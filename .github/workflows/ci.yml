@@ -39,8 +39,8 @@ jobs:
         run: dir
       - name: Install dependencies
         run: npm install
-        working-directory: ./todo-angular
+        working-directory: todo-angular
 
       - name: Run unit tests
         run: npm test
-        working-directory: ./todo-angular
+        working-directory: todo-angular
