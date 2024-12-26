@@ -1,5 +1,5 @@
 
-name: "Ci Pipeline"
+name: Ci Pipeline
 on:
   push:
     branches: [master]
