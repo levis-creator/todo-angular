@@ -35,8 +35,9 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version: '20'
-      - name: List files
-        run: dir
+      - name: List files in root
+        run: Get-ChildItem -Recurse
+
       - name: Install dependencies
         run: npm install
         working-directory: todo-angular
