@@ -27,12 +27,14 @@ jobs:
           VALIDATE_ALL_CODEBASE: true # Enable validation of the entire codebase
           VALIDATE_YAML: true
           YAML_PRETTIER: true
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
         with:
           node-version: '20'
-      - name: Installing node dependencies
-        uses: npm install
-      - name: Running unit test
-        uses: npm test
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm test
