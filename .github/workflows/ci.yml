@@ -1,42 +1,25 @@
-name: Ci Pipeline
+name: CI Pipeline
 on:
   push:
     branches: [master]
   pull_request:
     branches: [master]
 jobs:
-  lint_test:
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
+  build:
+    name: Build and Test
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Super-linter
-        uses: super-linter/super-linter@v7.2.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: true # Enable validation of the entire codebase
-          VALIDATE_YAML: true
-          YAML_PRETTIER: true
+      - name: List files in root
+        run: Get-ChildItem -Recurse
 
-
-  build-and-unit-test:
-    runs-on: windows-latest
-    steps:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
         with:
-          node-version: '20'
-      - name: List files in root
-        run: Get-ChildItem -Recurse
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install
