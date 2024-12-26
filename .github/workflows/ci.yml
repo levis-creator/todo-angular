@@ -27,6 +27,7 @@ jobs:
           VALIDATE_YAML: true
           YAML_PRETTIER: true
 
+
   build-and-unit-test:
     runs-on: windows-latest
     steps:
@@ -34,7 +35,8 @@ jobs:
         uses: actions/setup-node@v4.1.0
         with:
           node-version: '20'
-
+      - name: List files
+        run: dir
       - name: Install dependencies
         run: npm install
         working-directory: ./todo-angular
