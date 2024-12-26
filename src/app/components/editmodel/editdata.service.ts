@@ -11,11 +11,14 @@ export class EditdataService {
     taskName: '',
     isCompleted: false,
   };
+
   constructor() {}
-  handleModelvisibilitY() {
+
+  handleModelVisibility() {
     this.isOpen = !this.isOpen;
   }
-  handleDataSeting(data:TodoItem){
-    this.data=data
+
+  handleDataSetting(data: TodoItem) {
+    this.data = data;
   }
 }

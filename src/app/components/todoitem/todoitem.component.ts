@@ -24,20 +24,19 @@ export class TodoitemComponent {
   isOpen=signal(false)
   constructor(
     private todoService: TodosServicesService,
-    private router: Router,
     private editService:EditdataService
   ) {
     this.isOpen.set(this.editService.isOpen)
   }
 
-  
+
   handleDropDown() {
     this.dropDown = !this.dropDown;
   }
 
   handleEditModel(){
-    this.editService.handleModelvisibilitY()
-    this.editService.handleDataSeting(this.data)
+    this.editService.handleModelVisibility()
+    this.editService.handleDataSetting(this.data)
     this.isOpen.set(this.editService.isOpen)
   }
   async handleDelete(id: number) {

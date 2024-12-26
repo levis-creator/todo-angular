@@ -23,7 +23,7 @@ export class TodoformComponent {
     private todoservice: TodosServicesService,
     private router: Router,
     private editService:EditdataService
-   
+
   ) {}
   async addTodoItem() {
     if (!this.todoItem.taskName) {
@@ -43,9 +43,9 @@ export class TodoformComponent {
         .updateTodo(this.todoItem.itemId as number, this.todoItem).subscribe(()=>{
 
           this.message="Todo Item edited successful!"
-          this.editService.handleModelvisibilitY()
+          this.editService.handleModelVisibility()
         })
     }
   }
 }
-2
+

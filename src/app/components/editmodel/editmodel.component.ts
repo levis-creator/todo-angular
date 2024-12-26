@@ -16,16 +16,16 @@ export class EditmodelComponent implements OnInit {
     taskDescription:"",
     isCompleted:false,})
   constructor(private editService:EditdataService) {
-  
+
   }
   ngOnInit(): void {
     this.isOpen.set(this.editService.isOpen)
     this.data.set(this.editService.data)
   }
-    
+
   handleModelvisibility() {
 
-    this.editService.handleModelvisibilitY()
+    this.editService.handleModelVisibility()
     this.isOpen.set(this.editService.isOpen)
   }
 }
