@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   todoList: TodoItem[] = [];
   constructor(private todoService: TodosServicesService) {}
   ngOnInit(): void {
-    this.todoService.getTodos().subscribe((data: any[]) => {
+    this.todoService.getTodos().subscribe((data: TodoItem[]) => {
       this.todoList = data;
     });
   }

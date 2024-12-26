@@ -1,9 +1,8 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
-import { TodoItem } from '../../lib/type';
-import { FeatherModule } from 'angular-feather';
 import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { FeatherModule } from 'angular-feather';
+import { TodoItem } from '../../lib/type';
 import { TodosServicesService } from '../../services/todos-services.service';
-import { Router } from '@angular/router';
 import { EditdataService } from '../editmodel/editdata.service';
 import { EditmodelComponent } from "../editmodel/editmodel.component";
 @Component({
@@ -41,7 +40,7 @@ export class TodoitemComponent {
   }
   async handleDelete(id: number) {
     console.log(this.data);
-    await this.todoService.deleteTodo(id).subscribe((res) => {
+    await this.todoService.deleteTodo(id).subscribe(() => {
       this.removeFromList.emit(id);
     });
   }

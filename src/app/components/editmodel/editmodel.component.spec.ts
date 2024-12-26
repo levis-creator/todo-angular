@@ -1,12 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { EditmodelComponent } from './editmodel.component';
-import { EditdataService } from './editdata.service';
-import { TodoItem } from '../../lib/type';
 import { CommonModule } from '@angular/common';
-import { TodoformComponent } from '../todoform/todoform.component';
-import { signal } from '@angular/core';
-import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { TodoItem } from '../../lib/type';
+import { TodoformComponent } from '../todoform/todoform.component';
+import { EditdataService } from './editdata.service';
+import { EditmodelComponent } from './editmodel.component';
 
 describe('EditmodelComponent', () => {
   let component: EditmodelComponent;

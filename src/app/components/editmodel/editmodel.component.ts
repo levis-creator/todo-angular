@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, Input, OnInit, signal } from '@angular/core';
-import { EditdataService } from './editdata.service';
-import { TodoformComponent } from "../todoform/todoform.component";
+import { Component, OnInit, signal } from '@angular/core';
 import { TodoItem } from '../../lib/type';
+import { TodoformComponent } from "../todoform/todoform.component";
+import { EditdataService } from './editdata.service';
 
 @Component({
   selector: 'app-editmodel',

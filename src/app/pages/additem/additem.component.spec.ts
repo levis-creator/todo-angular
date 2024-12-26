@@ -1,12 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { AdditemComponent } from './additem.component';
+import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { TodoformComponent } from '../../components/todoform/todoform.component';
-import { provideHttpClient } from '@angular/common/http';
-import { FeatherModule } from 'angular-feather';
-import { importProvidersFrom } from '@angular/core';
-import { AlertCircle, CheckCircle } from 'angular-feather/icons';
+import { AdditemComponent } from './additem.component';
 
 describe('AdditemComponent', () => {
   let component: AdditemComponent;

@@ -5,14 +5,12 @@ import { TodoItem } from '../../lib/type';
   providedIn: 'root',
 })
 export class EditdataService {
-  public isOpen: boolean = false;
+  public isOpen= false;
   public data: TodoItem = {
     taskDescription: '',
     taskName: '',
     isCompleted: false,
   };
-
-  constructor() {}
 
   handleModelVisibility() {
     this.isOpen = !this.isOpen;

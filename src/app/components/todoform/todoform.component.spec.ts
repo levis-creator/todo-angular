@@ -1,14 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { provideHttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TodoformComponent } from './todoform.component';
-import { TodosServicesService } from '../../services/todos-services.service';
+import { FormsModule } from '@angular/forms';
 import { provideRouter, Router } from '@angular/router';
-import { EditdataService } from '../editmodel/editdata.service';
 import { of } from 'rxjs';
 import { TodoItem } from '../../lib/type';
-import { By } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { TodosServicesService } from '../../services/todos-services.service';
+import { EditdataService } from '../editmodel/editdata.service';
+import { TodoformComponent } from './todoform.component';
 
 describe('TodoformComponent', () => {
   let component: TodoformComponent;

@@ -17,7 +17,7 @@ export class TodoformComponent {
     isCompleted: false,
   };
   @Input() editForm = false;
-  @Input() closeModel=()=>{}
+  @Input() closeModel: (() => void) | null = null;
   message = '';
   constructor(
     private todoservice: TodosServicesService,
