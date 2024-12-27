@@ -51,7 +51,7 @@ jobs:
           title: "Auto-Merge: Successful CI Run"
           body: |
             All tests passed. This PR has been automatically created and merged.
-          base: main
+          base: master
 
   Deploy-Preview:
     runs-on: ubuntu-latest
