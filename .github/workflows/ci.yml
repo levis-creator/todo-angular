@@ -43,20 +43,16 @@ jobs:
 
       - name: Build Angular project
         run: ng build --configuration production
-      - name: Automatically Merge Pull Request
-        uses: actions/github-script@v6
-        if: ${{ success() }} # Run only if previous steps were successful
+      - name: Create and Merge Pull Request
+        uses: peter-evans/create-pull-request@v5
         with:
-          script: |
-            const { context, github } = require('@actions/github');
-            const prNumber = context.payload.pull_request.number;
+          commit-message: "Merge changes to main after successful tests"
+          branch: auto-merge-branch
+          title: "Auto-Merge: Successful CI Run"
+          body: |
+            All tests passed. This PR has been automatically created and merged.
+          base: main
 
-            // Merge the PR
-            await github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: prNumber,
-            });
   Deploy-Preview:
     runs-on: ubuntu-latest
     needs: build_test
