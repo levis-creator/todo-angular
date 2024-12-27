@@ -24,7 +24,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Lint Angular project
+        run: ng lint
 
       - name: Run unit tests
-        run: npm test
+        run: ng test --watch=false --browsers=ChromeHeadless
 
+      - name: Build Angular project
+        run: ng build --configuration production
+
+      - name: List build files
+        run: dir dist
